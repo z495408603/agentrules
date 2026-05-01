@@ -1,0 +1,34 @@
+{
+  "projectName": "agentrules",
+  "description": "One config to rule all AI coding assistants.",
+  "stack": [
+    "typescript",
+    "nodejs",
+    "vitest",
+    "testing-library"
+  ],
+  "targets": [
+    "claude",
+    "cursor",
+    "copilot"
+  ],
+  "templates": [
+    "base",
+    "testing"
+  ],
+  "contextFiles": [
+    "README.md",
+    "package.json",
+    "test"
+  ],
+  "promptTemplates": [
+    {
+      "name": "bugfix",
+      "content": "请先定位根因，再给出最小修复方案、风险点和验证步骤。"
+    },
+    {
+      "name": "test-plan",
+      "content": "根据本次改动列出最少但充分的测试清单，区分单元测试、集成测试和手工验证。"
+    }
+  ]
+}
