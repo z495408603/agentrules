@@ -49,6 +49,40 @@ agentrules status
 agentrules sync
 ```
 
+命令说明：
+- `agentrules init --name my-project`
+  初始化当前项目的 `agentrules.config.json`，并生成第一批规则文件。
+- `agentrules templates`
+  列出当前内置模板，方便查看有哪些可直接启用的技术栈规范。
+- `agentrules template add testing`
+  启用一个内置模板，并把它的规则、Prompt、上下文建议合并进当前项目。
+- `agentrules template remove testing`
+  移除一个模板引用，随后重新生成规则文件。
+- `agentrules prompt add bugfix "..."`
+  新增一个自定义 Prompt 模板，并输出到 `.agentrules/prompts/`。
+- `agentrules prompt update bugfix "..."`
+  更新一个已有自定义 Prompt 的内容。
+- `agentrules prompt remove bugfix`
+  删除一个已有自定义 Prompt。
+- `agentrules context add src`
+  注册一个上下文文件或目录，提示 AI 优先阅读这些内容。
+- `agentrules context remove src`
+  从上下文列表中移除一个文件或目录。
+- `agentrules rule add "..."`
+  添加一条项目自定义规则，适合补充团队自己的开发约束。
+- `agentrules rule update "旧规则" "新规则"`
+  修改一条已有自定义规则的文案。
+- `agentrules rule remove "规则内容"`
+  删除一条已有自定义规则。
+- `agentrules project update --name ... --description ...`
+  更新项目名称和项目描述，这些内容会同步出现在生成文件中。
+- `agentrules import`
+  读取现有的 `AGENTS.md`、`CLAUDE.md`、`.cursorrules`、Copilot 指令文件，并反向收敛进配置。
+- `agentrules status`
+  查看当前配置概览，包括模板、目标助手、Prompt 数量、上下文数量和规则数量。
+- `agentrules sync`
+  根据当前配置重新生成所有目标规则文件和 `.agentrules/` 资产目录。
+
 ## 工作流
 
 1. `init`：初始化单一配置源。
