@@ -1,0 +1,35 @@
+{
+  "projectName": "node-service",
+  "description": "Shared AI coding rules for a Node.js backend service.",
+  "stack": [
+    "typescript",
+    "nodejs",
+    "zod",
+    "vitest"
+  ],
+  "targets": [
+    "claude",
+    "copilot"
+  ],
+  "templates": [
+    "base",
+    "testing"
+  ],
+  "customRules": [
+    "接口改动前先说明输入输出契约是否变化。",
+    "新增错误处理逻辑时，明确日志、监控和回滚策略。"
+  ],
+  "contextFiles": [
+    "README.md",
+    "package.json",
+    "src",
+    "test",
+    "docs/api.md"
+  ],
+  "promptTemplates": [
+    {
+      "name": "api-change-review",
+      "content": "请评估这次接口改动的契约影响、回归风险、验证方式和回滚方案。"
+    }
+  ]
+}

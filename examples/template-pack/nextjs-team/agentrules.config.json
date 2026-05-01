@@ -1,0 +1,37 @@
+{
+  "projectName": "nextjs-team-app",
+  "description": "Shared AI coding rules for a Next.js team application.",
+  "stack": [
+    "typescript",
+    "nextjs",
+    "react",
+    "tailwindcss"
+  ],
+  "targets": [
+    "claude",
+    "cursor",
+    "copilot"
+  ],
+  "templates": [
+    "base",
+    "nextjs",
+    "testing"
+  ],
+  "customRules": [
+    "涉及页面数据流时，先说明服务端获取还是客户端获取。",
+    "影响 SEO、缓存或首屏加载路径的改动，必须描述预期结果。"
+  ],
+  "contextFiles": [
+    "README.md",
+    "package.json",
+    "app",
+    "components",
+    "test"
+  ],
+  "promptTemplates": [
+    {
+      "name": "feature-design",
+      "content": "请给出这个 Next.js 功能的目录结构、数据流、缓存策略和测试计划。"
+    }
+  ]
+}

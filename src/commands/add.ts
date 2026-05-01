@@ -1,4 +1,4 @@
-import { readConfig, writeConfig } from "../core/config";
+import { appendTemplate, readConfig, writeConfig } from "../core/config";
 import { getTemplate } from "../core/templates";
 import { writeGeneratedFiles } from "../core/render";
 
@@ -9,11 +9,7 @@ export async function runAddCommand(cwd: string, templateKey: string): Promise<v
     throw new Error(`未知模板：${templateKey}`);
   }
 
-  const config = await readConfig(cwd);
-
-  if (!config.templates.includes(template.key)) {
-    config.templates.push(template.key);
-  }
+  let config = appendTemplate(await readConfig(cwd), template.key);
 
   for (const stackItem of template.stack) {
     if (!config.stack.includes(stackItem)) {

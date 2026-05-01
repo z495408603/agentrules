@@ -16,10 +16,12 @@
     "base",
     "testing"
   ],
+  "customRules": [],
   "contextFiles": [
     "README.md",
     "package.json",
-    "test"
+    "test",
+    "src"
   ],
   "promptTemplates": [
     {
@@ -29,6 +31,10 @@
     {
       "name": "test-plan",
       "content": "根据本次改动列出最少但充分的测试清单，区分单元测试、集成测试和手工验证。"
+    },
+    {
+      "name": "product-roadmap",
+      "content": "请围绕用户场景、核心命令、配置结构、可扩展性和开源落地路径，输出这个功能的最小可行设计。"
     }
   ]
 }

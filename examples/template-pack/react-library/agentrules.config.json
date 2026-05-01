@@ -1,0 +1,36 @@
+{
+  "projectName": "react-library",
+  "description": "Shared AI coding rules for a React component library.",
+  "stack": [
+    "typescript",
+    "react",
+    "storybook",
+    "vitest"
+  ],
+  "targets": [
+    "claude",
+    "cursor"
+  ],
+  "templates": [
+    "base",
+    "react",
+    "testing"
+  ],
+  "customRules": [
+    "修改组件 API 时，必须说明兼容性影响和迁移方式。",
+    "涉及视觉回归的改动，至少列出受影响组件和状态。"
+  ],
+  "contextFiles": [
+    "README.md",
+    "package.json",
+    "src",
+    "stories",
+    "test"
+  ],
+  "promptTemplates": [
+    {
+      "name": "component-review",
+      "content": "请从组件 API、一致性、可访问性和测试覆盖角度审查本次改动。"
+    }
+  ]
+}

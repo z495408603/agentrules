@@ -11,6 +11,7 @@ export interface AgentRulesConfig {
   stack: string[];
   targets: AgentTarget[];
   templates: string[];
+  customRules: string[];
   contextFiles: string[];
   promptTemplates: PromptTemplate[];
 }
@@ -28,4 +29,10 @@ export interface TemplateDefinition {
 export interface GeneratedFile {
   path: string;
   content: string;
+}
+
+export interface ProjectSnapshot {
+  ruleSections: string[];
+  promptTemplates: PromptTemplate[];
+  contextFiles: string[];
 }
